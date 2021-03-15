@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Song</title>
+</head>
+<body>
+
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add new Song</button>
+    </form>
+    <a href="http://localhost:8000/netflix/">Back to home</a>
+
+</body>
+</html>

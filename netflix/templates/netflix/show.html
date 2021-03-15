@@ -1,0 +1,22 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ movie.title }}</title>
+
+<body>
+
+   <img src="{{ movie.poster.url }}" width="300" height="600" alt="">
+            <div>
+                <h3>{{ movie.title }}</h3>
+                <h4>{{ movie.date }}</h4>
+            </div>
+
+   <audio controls  src="{{ request.scheme }}://{{ request.get_host }}{{ movie.video.url }}"></audio>
+
+    <a href="{% url "delete" movie.id %}">Delete Song</a>
+    <a href="http://localhost:8000/netflix/">Back to home</a>
+    
+</body>
+</html>

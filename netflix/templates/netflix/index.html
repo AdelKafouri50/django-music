@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'netflix/index.css' %}">
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+    {% for movie in movies %}
+        <div class="card">
+            <img src="{{ movie.poster.url }}" alt="">
+            <div>
+                <a href="{% url "show" movie.id %}">{{ movie.title }}</a>
+                <h4>{{ movie.year }}</h4>
+            </div>
+        </div>
+    {% endfor %}
+     <a style="display: block; " href="http://localhost:8000/netflix/create">Add song</a>
+    
+
+</body>
+</html>
